@@ -1,0 +1,136 @@
+/* Sidebar Styles */
+.sidebar-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 270px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mini sidebar styles */
+.sidebar-wrapper.mini {
+    width: 70px;
+}
+
+.sidebar-wrapper.mini .sidebar-brand img {
+    width: 40px !important;
+    transition: width 0.3s;
+}
+
+.sidebar-wrapper.mini .menu-text {
+    display: none;
+}
+
+.sidebar-wrapper.mini .menu-item {
+    justify-content: center;
+    padding: 0.75rem 0;
+}
+
+.sidebar-wrapper.mini .menu-item i {
+    margin-right: 0;
+    font-size: 1.5rem;
+}
+
+.sidebar-wrapper.mini .user-profile-text {
+    display: none;
+}
+
+.sidebar-wrapper.mini .sidebar-footer {
+    text-align: center;
+}
+
+.sidebar-wrapper.mini .logout-text {
+    display: none;
+}
+
+.sidebar-brand {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-brand img {
+    transition: width 0.3s;
+}
+
+.sidebar-menu {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.sidebar-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+.menu-item {
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 8px;
+    margin: 0.25rem 1rem;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: rgba(13, 110, 253, 0.05);
+    color: #0d6efd;
+}
+
+.menu-item i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.menu-text {
+    transition: opacity 0.3s;
+}
+
+/* Main Content Styles */
+.main-container {
+    margin-left: 270px;
+    flex: 1;
+    transition: margin-left 0.3s;
+}
+
+.main-container.expanded {
+    margin-left: 70px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar-wrapper {
+        width: 0;
+        transform: translateX(-100%);
+    }
+
+    .sidebar-wrapper.active {
+        width: 270px;
+        transform: translateX(0);
+    }
+
+    .sidebar-wrapper.active.mini {
+        width: 70px;
+    }
+
+    .main-container {
+        margin-left: 0;
+    }
+
+    .header-container {
+        width: 100%;
+    }
+}
